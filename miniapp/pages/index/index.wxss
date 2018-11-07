@@ -1,0 +1,203 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+}
+
+.container {
+  width:100%;
+  height: 100%;
+  background-image: url('https://img.yinianzhi.cn/jump/jump-bg.png');
+  background-size: 100% 100%;
+}
+
+.count-view {
+  float: left;
+  display: block;
+  margin-top: 20rpx;
+  height: 200rpx;
+}
+
+.count-number {
+  display: block;
+  text-align: center;
+  font-size: 160rpx;
+  color: #333;
+}
+
+.count-text {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #969696;
+  padding-left: 10rpx;
+}
+
+.colck-view {
+  margin-top:-80rpx;
+}
+
+.colck-text {
+  display: inline-block;
+  width:232rpx;
+  text-align: center;
+  font-size: 60rpx;
+  color: #b2ca8b;
+  border: solid #b2ca8b 4rpx;
+  border-radius: 20rpx;
+  line-height: 44rpx;
+  padding: 16rpx 20rpx;
+}
+
+.jump-btn-view {
+  float: left;
+  width: 350rpx;
+  height: 350rpx;
+  clear: both;
+}
+
+.jump-btn {
+  width: 350rpx;
+  height: 350rpx;
+  line-height: 300rpx;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  background-color: #fff;
+}
+
+.jump-btn[disabled]:not([type]){
+  background: none;
+  background-color:#fff;
+}
+
+.voice-view {
+  position: absolute;
+  right: 80rpx;
+  top: 100rpx;
+}
+
+.voice-btn {
+  width: 60rpx;
+  height: 46rpx;
+}
+
+.jump-btn-hover {
+  opacity: 0.9;
+  transform: scale(0.95, 0.95); /*缩放*/
+  background: #fff;
+}
+
+.jump-btn::after {
+  border: none;
+  background-color: none;
+}
+
+.jump-btn image {
+  width: 350rpx;
+  height: 350rpx;
+  float: left;
+}
+
+.menu-view {
+  float: left;
+  width: 750rpx;
+}
+
+.menu-view button {
+  width: 159rpx;
+  height: 156rpx;
+  text-align: center;
+  border: none;
+  padding: 0;
+  background-color: none;
+}
+
+.menu-view button::after {
+  border: none;
+}
+
+.menu-button-view {
+  float: left;
+  width: 33.3%;
+}
+
+.menu-button-img {
+  width: 159rpx;
+  height: 156rpx;
+}
+
+.last-record {
+  color: #999;
+  clear: both;
+  width: 100%;
+  height: 62rpx;
+  float: left;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 62rpx;
+}
+
+.bg {
+   
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1001;
+  -moz-opacity: 0.7;
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+}
+ 
+.show {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  border-radius: 20rpx;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+.title{
+  padding:30rpx 20rpx;
+  color:#777;
+}
+.txt{
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+  color:#999;
+  line-height: 1.4em;
+
+ 
+}
+.share-count-number{
+  display: inline-block;
+  font-size:150rpx;
+  color:#fe8982;
+}
+.share-count-text{
+display: inline-block;
+}
+.shareBottons{
+  margin-top:40rpx;
+  padding-bottom: 30rpx;
+}
+
+.shareBottons button{
+  margin-top:20rpx;
+  width:80%;
+  border-radius: 30rpx;
+}
+.btnShare{
+  background-color:#fe8982;
+  color:#fff;
+}
+.btnNotShare{
+    background-color:#f5f5f5;
+    color:#969696;
+}

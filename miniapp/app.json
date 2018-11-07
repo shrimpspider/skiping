@@ -1,0 +1,14 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/index/records"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "跳绳计数",
+    "navigationBarTextStyle":"black"
+  }
+}

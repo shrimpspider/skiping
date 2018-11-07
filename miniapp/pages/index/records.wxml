@@ -1,0 +1,26 @@
+<!--pages/index/records.wxml-->
+<view class='container'>
+  <scroll-view class='records-list' scroll-y="true">
+    <block wx:for="{{records}}" wx:key="_id">
+      <view class='record-item'>
+        <text class='count-value'>{{item.count}}<text class='count-text'>次</text></text>
+        <view class='clock-container'>
+          <text class='clock-text'>{{item.minutes?item.minutes:'1'}}分钟</text>
+        </view>
+        <view class='time-text'>
+          <text>{{item.time}}</text>
+        </view>
+      </view>
+    </block>
+    <view hidden='{{loadingHidden}}'>
+      <view hidden='{{moreDataHidden}}' class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view hidden='{{!moreDataHidden}}' class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真的没有了</view>
+      </view>
+    </view>
+    <view class='bottom-blank'></view>
+  </scroll-view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#ff8883",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 375,
+    "navigationBarTitleText": "跳绳记录",
+    "backgroundTextStyle": "white"
+}

@@ -1,0 +1,65 @@
+/* pages/index/records.wxss */
+@import '../../style/weui.wxss';
+page{
+  background-color: #ff8882;
+}
+.container {
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+}
+
+.records-list {
+  width: 750rpx;
+}
+.bottom-blank{
+  width:750rpx;
+  height:40rpx;
+}
+
+.record-item {
+  width: 680rpx;
+  margin-left: 25rpx;
+  height: 160rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  padding:20rpx 10rpx;
+}
+.count-value{
+  float:left;
+  font-size:120rpx;
+  margin-left:20rpx;
+}
+.count-text{
+  padding-left:10rpx;
+  font-size:30rpx;
+  color:#969696;
+  font-weight: bold;
+}
+.clock-text{
+  width:51%;
+  float:right;
+   text-align: right;
+   white-space:nowrap;
+   color:#b2ca8b;
+   font-size:60rpx;
+   padding-right:20rpx;
+}
+.time-text{
+  float:right;
+  width:51%;
+  text-align: right;
+  white-space:nowrap;
+  font-size:28rpx;
+  color:#b4b4b4;
+  font-weight: bold;
+  margin-top:30rpx;
+  padding-right: 20rpx;
+}
+.weui-loadmore__tips{
+  color:#fff;
+}
+.weui-loadmore__tips_in-line{
+  color:#000;
+}

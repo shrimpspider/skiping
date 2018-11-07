@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='voice-view'>
+    <image src='{{voiceSetImg}}' class='voice-btn' bindtap='voiceSetHandler'></image>
+  </view>
+  <view class='count-view'>
+    <text class="count-number">{{count}}<text class='count-text'>次</text></text>
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{colckarray}}" disabled='{{isrun}}'>
+    <view class="colck-view">
+      <view class="colck-text">
+        {{clock}}</view>
+    </view>
+  </picker>
+  <view class='jump-btn-view'>
+    <button class='jump-btn' bindtap='bindJump' hover-class='jump-btn-hover' hover-stay-time="30" disabled='{{!jumpenable}}'>
+      <image src='{{jumptext}}'></image>
+    </button>
+  </view>
+  <view class="menu-view">
+    <view class='menu-button-view'>
+      <button bindtap='bindReset' hover-stay-time="30">
+        <image src='../res/resetbtn.png' class='menu-button-img'></image>
+      </button>
+    </view>
+    <view class='menu-button-view'>
+      <button bindgetuserinfo='bindHistory' hover-stay-time="30" open-type='getUserInfo'>
+        <image src='../res/historybtn.png' class='menu-button-img'></image>
+      </button>
+    </view>
+    <view class='menu-button-view'>
+      <button bindgetuserinfo='bindSave' open-type='getUserInfo' hover-stay-time="30">
+        <image src='../res/savebtn.png' class='menu-button-img'></image>
+      </button>
+    </view>
+    <view class='last-record'>
+      <text hidden='{{!record}}'>最近 {{record.time}} 跳绳 {{record.count}} 次</text>
+    </view>
+  </view>
+</view>
+<view class='sharemodal' hidden='{{hideShareModal}}'>
+  <view class="bg" ></view>
+  <view class="show" >
+    <view class='title'><view class='share-count-number'>{{count}}</view><view class='share-count-text'> 次 / {{colckindex+1}}分钟</view></view>
+    <text class='txt'>刚刚完成了一次跳绳</text>
+    <view class='shareBottons'>
+      <button class='btnShare' open-type='share'  bindtap='bindShare' hover-stop-propagation='true'>去分享</button>
+      <button class='btnNotShare' bindtap='bindNotShare' hover-stop-propagation='true'>不了</button>
+    </view>
+  </view>
+</view>
