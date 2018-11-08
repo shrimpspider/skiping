@@ -111,12 +111,11 @@ Page({
     }
   },
   bindHistory: function(e) {
-    if(!this.data.isrun){
+    if (!this.data.isrun) {
       wx.navigateTo({
         url: 'records',
       })
-    }
-    else{
+    } else {
       wx.showToast({
         title: '还没跳完呢!',
       })
@@ -144,40 +143,47 @@ Page({
           icon: 'none'
         })
       } else {
-        wx.showLoading({
-          title: '正在保存...',
-        })
-        app.userInfo = e.detail.userInfo
-        // console.log(e)
-        var rcd = {
-          name: e.detail.userInfo.nickName,
-          avatarurl: e.detail.userInfo.avatarUrl,
-          time: util.formatTime(date),
-          count: self.data.count,
-          minutes: Number(self.data.colckindex) + 1,
-          timestamp: self.data.timestamp
-        }
-        wx.cloud.init()
+        if (e.detail.userInfo) {
 
-        if (!wx.cloud) {
-          wx.showToast({
-            title: '请使用 2.2.3 或以上的基础库以使用云能力',
+          wx.showLoading({
+            title: '正在保存...',
           })
-          console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-        } else {
-          wx.cloud.callFunction({
-            name: 'saverecord',
-            data: rcd,
-          }).then(res => {
-            // console.log(rcd)
-            wx.hideLoading()
-            wx.setStorageSync('record', rcd)
-            self.setData({
-              record: rcd,
-              hideShareModal: false
+          app.userInfo = e.detail.userInfo
+          // console.log(e)
+          var rcd = {
+            name: e.detail.userInfo.nickName,
+            avatarurl: e.detail.userInfo.avatarUrl,
+            time: util.formatTime(date),
+            count: self.data.count,
+            minutes: Number(self.data.colckindex) + 1,
+            timestamp: self.data.timestamp
+          }
+          wx.cloud.init()
+
+          if (!wx.cloud) {
+            wx.showToast({
+              title: '请使用 2.2.3 或以上的基础库以使用云能力',
             })
-            // console.log(res.result)
-          }).catch(console.error)
+            console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+          } else {
+            wx.cloud.callFunction({
+              name: 'saverecord',
+              data: rcd,
+            }).then(res => {
+              // console.log(rcd)
+              wx.hideLoading()
+              wx.setStorageSync('record', rcd)
+              self.setData({
+                record: rcd,
+                hideShareModal: false
+              })
+              // console.log(res.result)
+            }).catch(console.error)
+          }
+        } else {
+          wx.showToast({
+            title: '操作需要授权',
+          })
         }
       }
     }
