@@ -276,10 +276,18 @@ Page({
     self.setData({
       hideShareModal: true
     })
-    return {
-      title: app.userInfo.nickName + '刚刚跳绳' + self.data.record.minutes + '分钟' + self.data.record.count + '下',
-      path: '/miniapp/pages/index/index' // 路径，传递参数到指定页面。
+    if (app.userInfo) {
+      return {
+        title: app.userInfo.nickName + '刚刚跳绳' + self.data.record.minutes + '分钟' + self.data.record.count + '下',
+        path: '/pages/index/index' // 路径，传递参数到指定页面。
+      }
+    } else {
+      return {
+      title: '一个可以帮助家长给小学生跳绳计数的辅助工具',
+      path: '/pages/index/index' // 路径，传递参数到指定页面。
     }
   }
+
+}
 
 })
